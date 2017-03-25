@@ -1,0 +1,43 @@
+<ion-view view-title="{{userInfo.name}}'s Infomation">
+    <ion-nav-bar>
+      <ion-nav-buttons side="right">
+        <a class="button icon-left ion-ios-gear button-clear button-dark"  href="#/tab/set"></a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="user-detail" >
+        <!--<div class="item item-avatar">
+            <img src="{{userInfo.faceUrl}}">
+            <h2>{{userInfo.name}}</h2>
+            <p>{{userInfo.age}}</p>
+        </div>
+-->
+        <div class="avatar">
+            <img src="{{userInfo.faceUrl}}" alt="">
+        </div>
+        <div class="main-msg">
+            <h3>{{userInfo.name}}</h3>
+        </div>
+        <div class="list list-inset">
+            <div class="item">
+                Gender: {{userInfo.gender=="male"?"Man":"Woman"}}
+            </div>
+            <div class="item">
+                Email: {{userInfo.email}}
+            </div>
+            <div class="item">
+                Age: {{userInfo.age}}
+            </div>
+            <div class="item">
+                Signature: {{userInfo.signature}}
+            </div>
+            <div class="item">
+                Create Time: {{userInfo.created_at | date}}
+            </div>
+        </div>
+
+        <button class="button button-outline btn-signup button-royal" ng-click="loginOut()">
+            登出
+        </button>
+    </ion-content>
+
+</ion-view>

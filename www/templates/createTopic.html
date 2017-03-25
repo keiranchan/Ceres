@@ -1,0 +1,32 @@
+<ion-view view-title="新建问题1">
+    <ion-nav-bar>
+        <ion-nav-buttons side="left">
+            <a class="button icon-left ion-chevron-left button-clear button-dark"  href="#/tab/bbs"> Back</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">标题 <span style="color:red">*</span></span>
+                <input ng-model="topicInfo.title" type="text" placeholder="Title">
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">标签 <span style="color:red">*</span></span>
+                <select ng-model="topicInfo.tab" ng-options="o.value as o.text  for o in tabs"></select>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">问题描述 <span style="color:red">*</span></span>
+
+              <!--<ng-quill-editor style="height:400px;" class="selectable" ng-model="topicInfo.content" toolbar="true"
+                               toolbar-entries="font size bold list bullet italic strike align color background link"
+                               editor-required="true" required="" error-class="input-error" read-only="false">
+              </ng-quill-editor>-->
+
+             <textarea ng-model="topicInfo.content"  name="" id="" cols="30" rows="10"></textarea>
+            </label>
+            <button class="button button-balanced btn-signup" ng-click="submitTopic()">
+                 确认提交
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

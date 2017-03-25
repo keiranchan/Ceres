@@ -1,0 +1,20 @@
+<ion-view view-title="Easy Ask">
+    <ion-nav-bar>
+        <ion-nav-buttons side="right">
+            <a class="button ion-plus-circled"  href="#/tab/create-topic"> New</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="padding">
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+        <div class="card" ng-repeat="item in topicData" ng-click="intoDetail(item)">
+            <div class="item item-comment">
+                {{item.title}}
+            </div>
+            <div class="item item-text-wrap">
+                <p class="article-wrap" ng-bind-html="item.content"></p>
+            </div>
+        </div>
+        <h5 style="text-align: center;color: #ccc;}" ng-if="moredata">已经到底部了</h5>
+        <ion-infinite-scroll ng-if="!moredata" on-infinite="loadMore()" distance="6%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

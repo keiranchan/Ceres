@@ -1,0 +1,17 @@
+<ion-view view-title="Account">
+  <ion-content class="account-container account-login-container">
+        <div class="list">
+            <label class="item item-input">
+                <input ng-model="userInfo.name" type="text" placeholder="用户名">
+            </label>
+            <label class="item item-input" style="border-radius: 0 0 6px 6px;">
+                <input ng-model="userInfo.password" type="password" placeholder="密码">
+            </label>
+            <button ng-click="loginIn(1)" class="button button-balanced submit-btn">
+                登陆
+            </button>
+            <p style="text-align: center"><a style="color: white;" href="#/tab/createAccount">前往注册</a></p>
+        </div>
+
+  </ion-content>
+</ion-view>

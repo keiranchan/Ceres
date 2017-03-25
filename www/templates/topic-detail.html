@@ -1,0 +1,43 @@
+<ion-view view-title="{{topicDetail.title}}">
+    <ion-nav-bar>
+        <ion-nav-buttons side="left">
+            <a class="button icon-left ion-chevron-left button-clear button-dark"  href="#/tab/bbs"> Back</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="padding home-detail" style="padding-bottom: 30px">
+        <div class="list card">
+            <div class="item ">
+                <h2>Title: {{topicDetail.title}}</h2>
+                <p>Author: {{topicDetail.user.name}}</p>
+            </div>
+
+            <div class="item item-body">
+                <p style="margin-bottom: 36px;" ng-bind-html="topicDetail.content">
+
+                </p>
+                  <a href="#" class="subdued">{{topicDetail.pv+1}} Visited</a>
+                  <a href="#" class="subdued">{{topicDetail.comment}} Comments</a>
+
+            </div>
+        </div>
+      <h4>发表评论</h4>
+      <div>
+        <textarea class="comment-input" ng-model="cc.c"
+                  name="" placeholder="输入你的回复"></textarea>
+        <button class="button button-block button-calm"  ng-click="submit()">
+          发送
+        </button>
+      </div>
+      <h4>评论区</h4>
+      <div ng-if="!commentsLen" class="card">
+        <div class="item item-text-wrap">
+          暂无评论
+        </div>
+      </div>
+      <div ng-if="commentsLen" class="card" ng-repeat="item in comments">
+        <div class="item item-text-wrap">
+          {{item.user.name}}: {{item.content}}
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

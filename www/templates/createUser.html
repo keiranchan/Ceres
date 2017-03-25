@@ -1,0 +1,52 @@
+<ion-view view-title="注册账号">
+    <ion-nav-bar>
+        <ion-nav-buttons side="left">
+            <a class="button icon-left ion-chevron-left button-clear button-dark"  href="#/tab/account">Back</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <div class="item" ng-show="imageSrc != undefined">
+                    <img ng-src="{{imageSrc}}" class="full-image" style="width:150px;height:150px;border: 1px solid #ccc;border-radius: 50%"/>
+                </div>
+                <span class="input-label">照片</span>
+                <button class="button button-small button-balanced" ng-click="addPhoto()">添加</button>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">用户名 <span style="color:red">*</span></span>
+                <input ng-model="userInfo.name" type="text" placeholder="Name">
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">性别 <span style="color:red">*</span></span>
+                <select ng-model="userInfo.gender" >
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">年龄 <span style="color:red">*</span></span>
+                <input ng-model="userInfo.age" type="number" placeholder="age">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">输入密码 <span style="color:red">*</span></span>
+                <input ng-model="userInfo.password" type="password" placeholder="password">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">确认密码 <span style="color:red">*</span></span>
+                <input ng-model="userInfo.repassword" type="password" placeholder="Re password">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">邮件 <span style="color:red">*</span></span>
+                <input ng-model="userInfo.email" type="email" placeholder="Email">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">个人介绍</span>
+                <textarea ng-model="userInfo.signature"  placeholder="introduce"></textarea>
+            </label>
+            <button class="button button-balanced btn-signup" ng-click="createUser()">
+                注册
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
